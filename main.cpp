@@ -23,11 +23,13 @@ void display_wrapped_text(vector<int> line_endings, vector<string> words)
 {
     int start = 0;
     int end = 0;
+    int count =1;
     while (end <= line_endings.size() - 1)
     {
         // Get the ending position of the current line
         end = line_endings[end];
         // Print the current line
+        cout<<"Line "<<count<<": ";
         for (int i = start; i < end; i++)
         {
             cout << words[i] << " ";
@@ -37,6 +39,7 @@ void display_wrapped_text(vector<int> line_endings, vector<string> words)
         // Move on to the next line
         start = end;
         end++;
+        count++;
     }
 }
 // Calculate the optimal line breaks and their associated cost
